@@ -13,12 +13,14 @@ void format_string();
 void isoceles();
 void operations(double x, double y);
 void rectangle(int base, int height);
+void rectangle_with_number_and_ast(int base, int height);
 
 int main() {
   // format_string();
   //  isoceles();
   // operations(5.0, 2.0);
-  rectangle(10, 5);
+  // rectangle(10, 5);
+  rectangle_with_number_and_ast(10, 5);
   return 0;
 }
 
@@ -49,12 +51,22 @@ void operations(double n, double x) {
 
 void rectangle(int base, int height) {
   for (int i = 0; i < height; ++i) {
-    if (i == 0)
-      printf("\t");
-
     for (int j = 0; j < base; ++j) {
       printf("*");
     }
     printf("\n\t");
+  }
+}
+
+void rectangle_with_number_and_ast(int base, int height) {
+  for (int l = 1; l <= height; l++) {
+    for (int c = 1; c <= base; c++) {
+      if (c <= l) {
+        printf("%d", c);
+        continue;
+      }
+      printf("*");
+    }
+    printf("\n");
   }
 }
