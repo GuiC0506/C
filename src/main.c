@@ -1,3 +1,4 @@
+#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -10,10 +11,14 @@
 
 void format_string();
 void isoceles();
+void operations(double x, double y);
+void rectangle(int base, int height);
 
 int main() {
-  format_string();
-  // isoceles();
+  // format_string();
+  //  isoceles();
+  // operations(5.0, 2.0);
+  rectangle(10, 5);
   return 0;
 }
 
@@ -32,4 +37,24 @@ void isoceles() {
   printf("  *\n");
   printf(" ***\n");
   printf("*****\n");
+}
+
+void operations(double n, double x) {
+  printf("%.1f + %.1f = %.1f\n", n, x, n + x);
+  printf("%.1f - %f = %.1f\n", n, x, n - x);
+  printf("%.1f * %f = %.1f\n", n, x, n * x);
+  printf("%.1f / %.1f = %.1f\n", n, x, n / x);
+  printf("%.1f modulus %.1f = %f\n", n, x, fmod(n, x));
+}
+
+void rectangle(int base, int height) {
+  for (int i = 0; i < height; ++i) {
+    if (i == 0)
+      printf("\t");
+
+    for (int j = 0; j < base; ++j) {
+      printf("*");
+    }
+    printf("\n\t");
+  }
 }
