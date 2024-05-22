@@ -14,13 +14,17 @@ void isoceles();
 void operations(double x, double y);
 void rectangle(int base, int height);
 void rectangle_with_number_and_ast(int base, int height);
+void variables();
+void user_input();
 
 int main() {
   // format_string();
   //  isoceles();
   // operations(5.0, 2.0);
   // rectangle(10, 5);
-  rectangle_with_number_and_ast(10, 5);
+  // rectangle_with_number_and_ast(10, 5);
+  // variables();
+  user_input();
   return 0;
 }
 
@@ -69,4 +73,36 @@ void rectangle_with_number_and_ast(int base, int height) {
     }
     printf("\n");
   }
+}
+
+void variables() {
+  // -> variables are stored in a memory address
+  // <type> <name> = <content>
+
+  // variable declaration
+  int numeric;
+  // varible assignment
+  numeric = 5;
+
+  // declaration + assignment
+  int age = 8;
+  double temp = 27.5;
+
+  printf("%d\n", age);
+}
+
+void user_input() {
+  double gradex;
+  double gradey;
+  printf("type the first grade: ");
+  scanf("%lf", &gradex);
+
+  printf("type the second grade: ");
+  scanf("%lf", &gradey);
+
+  printf("average grade: %.2lf\n", (gradex + gradey) / 2);
+  printf("multiplication of the grades: %.2lf\n", gradex * gradey);
+  printf("perimeter of the grades: %.2lf\n", (gradex * 2) + (gradey * 2));
+  printf("a memory address: %p\n", &gradex);
+  printf("the value of the pointer: %lf\n", *(&gradex));
 }
